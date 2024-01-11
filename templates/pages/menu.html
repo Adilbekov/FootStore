@@ -1,0 +1,828 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="KreativDev">
+
+    <!-- Title -->
+    <title>Наш Меню</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/images/logo/fav.png' %}" type="image/x-icon">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendors/bootstrap.min.css' %}">
+    <!-- Fontawesome Icon CSS -->
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome/css/all.min.css' %}">
+    <!-- Icomoon Icon CSS -->
+    <link rel="stylesheet" href="{% static 'assets/fonts/icomoon/style.css' %}">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendors/magnific-popup.min.css' %}">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendors/nice-select.css' %}">
+    <!-- Swiper Slider -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendors/swiper-bundle.min.css' %}">
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendors/aos.min.css' %}">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendors/animate.min.css' %}">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+</head>
+
+<body class="theme-color-1">
+    <!-- Preloader start -->
+    <div id="preLoader">
+        <div class="loader">
+            <img src="{% static 'assets/images/loader-1.gif' %}" alt="Preloader">
+        </div>
+    </div>
+    <!-- Preloader end -->
+
+    <!-- Header-area start -->
+    <header class="header-area header-1" data-aos="fade-down">
+        <!-- Start mobile menu -->
+        <div class="mobile-menu">
+            <div class="container">
+                <div class="mobile-menu-wrapper"></div>
+            </div>
+        </div>
+        <!-- End mobile menu -->
+
+        <div class="main-responsive-nav">
+            <div class="container">
+                <!-- Mobile Logo -->
+                <div class="logo">
+                    <a href="{% url 'home' %}" target="_self" title="Treats">
+                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/logo/logo-1.png' %}" alt="Treats logo">
+                    </a>
+                </div>
+                <!-- Menu toggle button -->
+                <button class="menu-toggler" type="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="main-navbar">
+            <div class="header-top py-2">
+                <div class="container">
+                    <div class="header-top-items mobile-item d-flex flex-wrap justify-content-between gap-15 align-items-center">
+                        <a href="tel:99911446666" class="icon-start" target="_self" title="Call Us">
+                            <span class="color-primary">
+                                Call Us:
+                            </span>
+                            +0508-03-08-79
+                        </a>
+                        <div class="social-link icon-only">
+                            <a class="rounded-pill" href="https://www.instagram.com/" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a>
+                            <a class="rounded-pill" href="https://www.dribbble.com/" target="_blank" title="dribbble"><i class="fab fa-dribbble"></i></a>
+                            <a class="rounded-pill" href="https://www.twitter.com/" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a>
+                            <a class="rounded-pill" href="https://www.youtube.com/" target="_blank" title="youtube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    {% include 'include/header.html' %}
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header-area end -->
+
+    <!-- Breadcrumb start -->
+    <div class="breadcrumb-area bg-img bg-cover" data-bg-image="{{image.image6.url}}">
+        <div class="overlay 65"></div>
+        <div class="container">
+            <div class="content text-center">
+                <h2 class="color-white">Наша Меню</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Домой</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Меню</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb end -->
+
+    <!-- Menu-area start -->
+    <section class="menu-area pt-100 pb-75">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="tabs-navigation tabs-navigation-3 text-center mb-30">
+                        <ul class="nav nav-tabs flex-wrap">
+                            <li class="nav-item">
+                                <button class="nav-link active btn-lg" data-bs-toggle="tab" data-bs-target="#tab1" type="button">
+                                    <span class="menu-icon mb-15">
+                                        <i class="fal fa-utensils-alt"></i>
+                                    </span>
+                                    <span class="h5 mb-0 lh-1">Для компании</span>
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link btn-lg" data-bs-toggle="tab" data-bs-target="#tab2" type="button">
+                                    <span class="menu-icon mb-15">
+                                        <i class="fal fa-hamburger"></i>
+                                    </span>
+                                    <span class="h5 mb-0 lh-1">Fast Food (4)</span>
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link btn-lg" data-bs-toggle="tab" data-bs-target="#tab3" type="button">
+                                    <span class="menu-icon mb-15">
+                                        <i class="fal fa-ice-cream"></i>
+                                    </span>
+                                    <span class="h5 mb-0 lh-1">Dessert (5)</span>
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link btn-lg" data-bs-toggle="tab" data-bs-target="#tab4" type="button">
+                                    <span class="menu-icon mb-15">
+                                        <i class="fal fa-cocktail"></i>
+                                    </span>
+                                    <span class="h5 mb-0 lh-1">Juice (4)</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="tab-content">
+                        <div class="tab-pane slide show active" id="tab1">
+                            <div class="tabs-navigation tabs-navigation-2 text-center mb-30">
+                                <ul class="nav nav-tabs border-bottom" data-hover="fancyHover">
+                                    <li class="nav-item active">
+                                        <button class="nav-link hover-effect active btn-lg" data-bs-toggle="tab" data-bs-target="#tab11" type="button">All</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab12" type="button">Family</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab13" type="button">Couple</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab14" type="button">Individual</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane slide show active" id="tab11">
+                                    <div class="row">
+                                        {% for all_pr in all_menu_products %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{all_pr.image.url}}" data-src="{{all_pr.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{all_pr.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{all_pr.price}}</span>
+                                                            <span class="prev-price">${{all_pr.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{all_pr.description}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab12">
+                                    <div class="row">
+                                        {% for family in set_menu1 %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{family.image.url}}" data-src="{{family.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{family.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{family.price}}</span>
+                                                            <span class="prev-price">${{family.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{family.description}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab13">
+                                    <div class="row">
+                                        {% for couple in set_menu2 %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{couple.image.url}}" data-src="{{couple.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{couple.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{couple.price}}</span>
+                                                            <span class="prev-price">${{couple.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{couple.description}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab14">
+                                    <div class="row">
+                                        {% for individual in set_menu3 %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{individual.image.url}}" data-src="{{individual.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{individual.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{individual.price}}</span>
+                                                            <span class="prev-price">${{individual.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{individual.description}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane slide" id="tab2">
+                            <div class="tabs-navigation tabs-navigation-2 text-center mb-30">
+                                <ul class="nav nav-tabs border-bottom" data-hover="fancyHover">
+                                    <li class="nav-item active">
+                                        <button class="nav-link hover-effect active btn-lg" data-bs-toggle="tab" data-bs-target="#tab21" type="button">All</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab22" type="button">Burger</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab23" type="button">Pasta</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab24" type="button">Pizza</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane slide show active" id="tab21">
+                                    <div class="row">
+                                        {% for all_pr in all_fast_food %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{all_pr.image.url}}" data-src="{{all_pr.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{all_pr.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{all_pr.price}}</span>
+                                                            <span class="prev-price">${{all_pr.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{all_pr.description}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab22">
+                                    <div class="row">
+                                        {% for burger in fast_food2 %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{burger.image.url}}" data-src="{{burger.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{burger.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{burger.price}}</span>
+                                                            <span class="prev-price">${{burger.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{burger.description}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab23">
+                                    <div class="row">
+                                        {% for pasta in  fast_food3 %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{pasta.image.url}}" data-src="{{pasta.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{pasta.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{pasta.price}}</span>
+                                                            <span class="prev-price">${{pasta.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{pasta.description}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab24">
+                                    <div class="row">
+                                        {% for pizza in fast_food1 %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{pizza.image.url}}" data-src="{{pizza.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{pizza.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{pizza.price}}</span>
+                                                            <span class="prev-price">${{pizza.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                       {{pizza.description}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane slide" id="tab3">
+                            <div class="tabs-navigation tabs-navigation-2 text-center mb-30">
+                                <ul class="nav nav-tabs border-bottom" data-hover="fancyHover">
+                                    <li class="nav-item active">
+                                        <button class="nav-link hover-effect active btn-lg" data-bs-toggle="tab" data-bs-target="#tab31" type="button">All</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab32" type="button">Shake</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab33" type="button">Ice Cream</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab34" type="button">Cake</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane slide show active" id="tab31">
+                                    <div class="row">
+                                        {% for dessert in all_deserts %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{dessert.image.url}}" data-src="{{dessert.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{dessert.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{dessert.price}}</span>
+                                                            <span class="prev-price">${{dessert.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{dessert.description}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide show active" id="tab32">
+                                    <div class="row">
+                                        {% for snake in desert3 %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{snake.image.url}}" data-src="{{snake.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{snake.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{snake.price}}</span>
+                                                            <span class="prev-price">${{snake.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{snake.description}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab33">
+                                    <div class="row">
+                                        {% for ise_cream in desert2 %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{ise_cream.image.url}}" data-src="{{ise_cream.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{ise_cream.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{ise_cream.price}}</span>
+                                                            <span class="prev-price">${{ise_cream.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{ise_cream.description}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab34">
+                                    <div class="row">
+                                        {% for cake in desert1 %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{cake.image.url}}" data-src="{{cake.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{cake.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{kake.price}}</span>
+                                                            <span class="prev-price">${{cake.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                       {{cake.description}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane slide" id="tab4">
+                            <div class="tabs-navigation tabs-navigation-2 text-center mb-30">
+                                <ul class="nav nav-tabs border-bottom" data-hover="fancyHover">
+                                    <li class="nav-item active">
+                                        <button class="nav-link hover-effect active btn-lg" data-bs-toggle="tab" data-bs-target="#tab41" type="button">All</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab42" type="button">Fruit Juice</button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="nav-link hover-effect btn-lg" data-bs-toggle="tab" data-bs-target="#tab43" type="button">Coffee</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane slide show active" id="tab41">
+                                    <div class="row">
+                                        {% for all_juice in all_juice %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{all_juice.image.url}}" data-src="{{all_juice.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                           {{all_juice.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{all_juice.price}}</span>
+                                                            <span class="prev-price">${{all_juice.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{all_juice.description}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab42">
+                                    <div class="row">
+                                        {% for fruct in juice2 %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{fruct.image.url}}" data-src="{{fruct.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{fruct.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{fruct.price}}</span>
+                                                            <span class="prev-price">${{fruct.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{fruct.description}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="tab-pane slide" id="tab43">
+                                    <div class="row">
+                                        {% for coffee in juice1 %}
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="menu p-15 mb-25">
+                                                <figure class="menu-img">
+                                                    <div class="lazy-container ratio ratio-1-1 bg-none">
+                                                        <img class="lazyload" src="{{coffee.image.url}}" data-src="{{coffee.image.url}}" alt="Image">
+                                                    </div>
+                                                    <div class="hover-show">
+                                                        <a href="{% url 'menu' %}" class="btn-icon radius-sm" title="Add to Cart" target="_self">
+                                                            <i class="fal fa-shopping-bag"></i>
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                                <div class="menu-details">
+                                                    <div class="menu-title-price mb-2">
+                                                        <h4 class="menu-title lc-1 mb-0">
+                                                            {{coffee.name}}
+                                                        </h4>
+                                                        <!-- <span class="hr"></span> -->
+                                                        <div class="menu-price">
+                                                            <span class="h5 new-price color-primary">${{coffee.price}}</span>
+                                                            <span class="prev-price">${{coffee.old_price}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0">
+                                                        {{coffee.description}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Menu-area end -->
+
+    <!-- Gallery-area start -->
+    <div class="gallery-area" data-aos="fade-up">
+        <div class="container">
+            <div class="swiper gallery-slider">
+                <div class="swiper-wrapper">
+                    {% for advertising in advertising %}
+                    <div class="swiper-slide">
+                        <a href="{{advertising.url}}" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{{advertising.image.url}}" data-src="{{advertising.image.url}}" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{{advertising.logo.url}}" data-src="{{advertising.logo.url}}" alt="Image"></div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery-area end -->
+
+    <!-- Footer-area start -->
+    {% include 'include/footer.html' %}
+    <!-- Footer-area end-->
+
+    <!-- Go to Top -->
+    <div class="go-top"><i class="fal fa-angle-up"></i></div>
+    <!-- Go to Top -->
+
+    <!-- Jquery JS -->
+    <script src="{% static 'assets/js/vendors/jquery.min.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'assets/js/vendors/bootstrap.min.js' %}"></script>
+    <!-- Counter JS -->
+    <script src="{% static 'assets/js/vendors/jquery.counterup.min.js' %}"></script>
+    <!-- Magnific Popup JS -->
+    <script src="{% static 'assets/js/vendors/jquery.magnific-popup.min.js' %}"></script>
+    <!-- Nice Select JS -->
+    <script src="{% static 'assets/js/vendors/jquery.nice-select.min.js' %}"></script>
+    <!-- Swiper Slider JS -->
+    <script src="{% static 'assets/js/vendors/swiper-bundle.min.js' %}"></script>
+    <!-- Lazysizes -->
+    <script src="{% static 'assets/js/vendors/lazysizes.min.js' %}"></script>
+    <!-- Mouse Hover JS -->
+    <script src="{% static 'assets/js/vendors/mouse-hover-move.js' %}"></script>
+    <!-- Twinmax JS -->
+    <script src="{% static 'assets/js/vendors/tweenMax.min.js' %}"></script>
+    <!-- AOS JS -->
+    <script src="{% static 'assets/js/vendors/aos.min.js' %}"></script>
+    <!-- Main script JS -->
+    <script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+
+</html>

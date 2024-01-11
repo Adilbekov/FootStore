@@ -1,0 +1,77 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg">
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html" target="_self" title="Treats">
+        <img class="lazyload" src="{{ass.logo.url}}" data-src="{{ass.logo.url}}" alt="Treats logo">
+    </a>
+    <!-- Navigation items -->
+    <div class="collapse navbar-collapse">
+        <ul id="mainMenu" class="navbar-nav mobile-item mx-auto">
+            <li class="nav-item">
+                <a href="{% url 'home' %}" class="nav-link toggle">Home <i class="fal fa-plus"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link toggle" href="{% url 'menu' %}">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link toggle" href="{% url 'shop' %}">Shop<i class="fal fa-plus"></i></a>
+                
+            </li>
+            <li class="nav-item">
+                <a class="nav-link toggle" href="#">Pages<i class="fal fa-plus"></i></a>
+                <ul class="menu-dropdown">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'reservations' %}">Reservation</a>
+                    </li>
+                    
+                    
+                   
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url '404' %}">404</a>
+                    </li>
+                    
+                    
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link toggle" href="{% url 'blog' %}">Blog<i class="fal fa-plus"></i></a>
+                
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div class="more-option mobile-item">
+        <div class="item">
+            <div class="language">
+                <select class="niceselect">
+                    <option value="1">English</option>
+                    <option value="2">Chinese</option>
+                    <option value="3">French</option>
+                </select>
+            </div>
+        </div>
+        <div class="item">
+            <a href="login.html" class="btn-icon" target="_self" aria-label="User" title="User">
+                <i class="fal fa-user-circle"></i>
+            </a>
+        </div>
+        <div class="item">
+            <a href="cart.html" class="btn-icon pe-2" target="_self" aria-label="Cart" title="Cart">
+                <i class="fal fa-shopping-bag"></i>
+                <span class="badge rounded-pill bg-primary">3</span>
+            </a>
+        </div>
+        <div class="item">
+            <a href="reservation.html" class="btn btn-md btn-primary rounded-pill" title="Book a Table" target="_self">Reservation</a>
+        </div>
+    </div>
+</nav>

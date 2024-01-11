@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="KreativDev">
+
+    <!-- Title -->
+    <title>Наши контакты</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/images/logo/fav.png' %}" type="image/x-icon">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendors/bootstrap.min.css' %}">
+    <!-- Fontawesome Icon CSS -->
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome/css/all.min.css' %}">
+    <!-- Icomoon Icon CSS -->
+    <link rel="stylesheet" href="{% static 'assets/fonts/icomoon/style.css' %}">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendors/magnific-popup.min.css' %}">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendors/nice-select.css' %}">
+    <!-- Swiper Slider -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendors/swiper-bundle.min.css' %}">
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendors/aos.min.css' %}">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendors/animate.min.css' %}">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+</head>
+
+<body class="theme-color-1">
+    <!-- Preloader start -->
+    <div id="preLoader">
+        <div class="loader">
+            <img src="{% static 'assets/images/loader-1.gif' %}" alt="Preloader">
+        </div>
+    </div>
+    <!-- Preloader end -->
+
+    <!-- Header-area start -->
+    <header class="header-area header-1" data-aos="fade-down">
+        <!-- Start mobile menu -->
+        <div class="mobile-menu">
+            <div class="container">
+                <div class="mobile-menu-wrapper"></div>
+            </div>
+        </div>
+        <!-- End mobile menu -->
+
+        <div class="main-responsive-nav">
+            <div class="container">
+                <!-- Mobile Logo -->
+                <div class="logo">
+                    <a href="index.html" target="_self" title="Treats">
+                        <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/logo/logo-1.png' %}" alt="Treats logo">
+                    </a>
+                </div>
+                <!-- Menu toggle button -->
+                <button class="menu-toggler" type="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="main-navbar">
+            <div class="header-top py-2">
+                <div class="container">
+                    <div class="header-top-items mobile-item d-flex flex-wrap justify-content-between gap-15 align-items-center">
+                        <a href="tel:99911446666" class="icon-start" target="_self" title="Call Us">
+                            <span class="color-primary">
+                                Позвоните нам:
+                            </span>
+                            +999 11 44 6666
+                        </a>
+                        <div class="social-link icon-only">
+                            <a class="rounded-pill" href="https://www.instagram.com/" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a>
+                            <a class="rounded-pill" href="https://www.dribbble.com/" target="_blank" title="dribbble"><i class="fab fa-dribbble"></i></a>
+                            <a class="rounded-pill" href="https://www.twitter.com/" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a>
+                            <a class="rounded-pill" href="https://www.youtube.com/" target="_blank" title="youtube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    {% include 'include/header.html' %}
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header-area end -->
+
+    <!-- Breadcrumb start -->
+    <div class="breadcrumb-area bg-img bg-cover" data-bg-image="{{image.image6.url}}">
+        <div class="overlay 65"></div>
+        <div class="container">
+            <div class="content text-center">
+                <h2 class="color-white">Contact</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Домой</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Контакты</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb end -->
+
+    <!-- Contact-area start -->
+    <div class="contact-area pt-100 pb-60">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border radius-md mb-30" data-aos="fade-up">
+                        <div class="icon radius-sm bg-primary-light">
+                            <i class="fal fa-phone-plus"></i>
+                        </div>
+                        <div class="card-text">
+                            {% for phone in ass.options.all %}
+                            <p><a href="tel:+990123456789">{{phone.phone}}</a></p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border radius-md mb-30" data-aos="fade-up">
+                        <div class="icon radius-sm bg-primary-light">
+                            <i class="fal fa-envelope"></i>
+                        </div>
+                        <div class="card-text">
+                            <p><a href="mailTo:{{ass.email}}">{{ass.email}}</a></p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border radius-md mb-30" data-aos="fade-up">
+                        <div class="icon radius-sm bg-primary-light">
+                            <i class="fal fa-map-marker-alt"></i>
+                        </div>
+                        <div class="card-text">
+                            <p>{{ass.adres}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spacer -->
+            <div class="pb-70"></div>
+
+            <div class="row gx-xl-5">
+                <div class="section-title title-center mb-50">
+                    <h2 class="title mb-0" data-aos="fade-up">
+                        Связаться
+                    </h2>
+                </div>
+                <div class="col-lg-6 mb-40" data-aos="fade-up">
+                    <form id="contactForm" method='POST'>
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-20">
+                                    <input type="text" name="name" class="form-control" id="name" required placeholder="Your name*">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group mb-20">
+                                    <input type="email" name="email" class="form-control" id="email" required placeholder="Your email*">
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group mb-20">
+                                    <input type="text" name="subject" class="form-control" id="subject" required placeholder="Your subject">
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group mb-20">
+                                    <textarea name="message" id="message" class="form-control" cols="30" rows="8" placeholder="Your Message..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="custom-checkbox mb-20">
+                                    <input class="input-checkbox" type="checkbox" name="checkbox" id="checkbox1" value="">
+                                    <label class="form-check-label" for="checkbox1"><span> I agree with Treats's <a href="terms-conditions.html">Terms & Conditions</a> <span class="color-red">*</span> </span></label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 text-center">
+                                <button class="btn btn-lg btn-primary rounded-pill" type="submit" aria-label="Make a Reservation">Отпрваить</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6 mb-40" data-aos="fade-up">
+                    <div class="map h-100 overflow-hidden radius-md">
+                        <iframe class="lazyload h-100" id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1659780709118!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact-area end -->
+
+    <!-- Gallery-area start -->
+    <div class="gallery-area" data-aos="fade-up">
+        <div class="container">
+            <div class="swiper gallery-slider">
+                <div class="swiper-wrapper">
+                    {% for advertising in advertising %}
+                    <div class="swiper-slide">
+                        <a href="{{advertising.url}}" class="slider-item" title="Image" target="_blank">
+                            <div class="lazy-container ratio ratio-2-3">
+                                <img class="lazyload" src="{{advertising.image.url}}" data-src="{{advertising.image.url}}" alt="Image">
+                            </div>
+                            <div class="icon rounded-pill"><img class="lazyload blur-up" src="{{advertising.logo.url}}" data-src="{{advertising.logo.url}}" alt="Image"></div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery-area end -->
+
+    <!-- Footer-area start -->
+    {% include 'include/footer.html' %}
+    <!-- Footer-area end-->
+
+    <!-- Go to Top -->
+    <div class="go-top"><i class="fal fa-angle-up"></i></div>
+    <!-- Go to Top -->
+
+    <!-- Jquery JS -->
+    <script src="{% static 'assets/js/vendors/jquery.min.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'assets/js/vendors/bootstrap.min.js' %}"></script>
+    <!-- Counter JS -->
+    <script src="{% static 'assets/js/vendors/jquery.counterup.min.js' %}"></script>
+    <!-- Magnific Popup JS -->
+    <script src="{% static 'assets/js/vendors/jquery.magnific-popup.min.js' %}"></script>
+    <!-- Nice Select JS -->
+    <script src="{% static 'assets/js/vendors/jquery.nice-select.min.js' %}"></script>
+    <!-- Swiper Slider JS -->
+    <script src="{% static 'assets/js/vendors/swiper-bundle.min.js' %}"></script>
+    <!-- Lazysizes -->
+    <script src="{% static 'assets/js/vendors/lazysizes.min.js' %}"></script>
+    <!-- Mouse Hover JS -->
+    <script src="{% static 'assets/js/vendors/mouse-hover-move.js' %}"></script>
+    <!-- Twinmax JS -->
+    <script src="{% static 'assets/js/vendors/tweenMax.min.js' %}"></script>
+    <!-- AOS JS -->
+    <script src="{% static 'assets/js/vendors/aos.min.js' %}"></script>
+    <!-- Main script JS -->
+    <script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+
+</html>
