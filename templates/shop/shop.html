@@ -9,7 +9,7 @@
     <meta name="author" content="KreativDev">
 
     <!-- Title -->
-    <title>Treats - Fast Food & Restaurant HTML Template</title>
+    <title>Магазин</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{% static 'assets/images/logo/fav.png' %}" type="image/x-icon">
 
@@ -62,7 +62,7 @@
             <div class="container">
                 <!-- Mobile Logo -->
                 <div class="logo">
-                    <a href="index.html" target="_self" title="Treats">
+                    <a href="{% url 'home' %}" target="_self" title="Treats">
                         <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/logo/logo-1.png' %}" alt="Treats logo">
                     </a>
                 </div>
@@ -108,11 +108,11 @@
         <div class="overlay 65"></div>
         <div class="container">
             <div class="content text-center">
-                <h2 class="color-white">Shop</h2>
+                <h2 class="color-white">Магазин</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Shop</li>
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Домой</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Магазин</li>
                     </ol>
                 </nav>
             </div>
@@ -130,12 +130,12 @@
                     </div>
                     <div class="col-md-6">
                         <div class="sort-item mb-20 justify-content-md-end">
-                            <label class="me-2 font-sm">Sort By:</label>
+                            <label class="me-2 font-sm">Сортировать по:</label>
                             <select name="type" class="niceselect color-dark">
-                                <option value="high">Popularity</option>
-                                <option value="low">Newest</option>
-                                <option value="New">Low to High</option>
-                                <option value="Old">High to Low</option>
+                                <option value="high">Популярность</option>
+                                <option value="low">Новейший</option>
+                                <option value="New">Снизу вверх</option>
+                                <option value="Old">От высокого к низкому</option>
                             </select>
                         </div>
                     </div>
@@ -155,10 +155,10 @@
                                     <a href="{% url 'shop_detile' all_pr.id %}" class="btn-icon rounded-circle" title="Quick View" target="_self">
                                         <i class="fal fa-eye"></i>
                                     </a>
-                                    <a href="cart.html" class="btn-icon rounded-circle" title="Add to Cart" target="_self">
+                                    <a href="{% url 'shop_detile' all_pr.id %}" class="btn-icon rounded-circle" title="Add to Cart" target="_self">
                                         <i class="fal fa-shopping-cart"></i>
                                     </a>
-                                    <a href="wishlist.html" class="btn-icon rounded-circle" title="Add to Wishlist" target="_self">
+                                    <a href="{% url 'shop_detile' all_pr.id %}" class="btn-icon rounded-circle" title="Add to Wishlist" target="_self">
                                         <i class="fal fa-heart"></i>
                                     </a>
                                 </div>

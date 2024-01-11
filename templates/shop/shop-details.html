@@ -62,7 +62,7 @@
             <div class="container">
                 <!-- Mobile Logo -->
                 <div class="logo">
-                    <a href="index.html" target="_self" title="Treats">
+                    <a href="{% url 'home' %}" target="_self" title="Treats">
                         <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/logo/logo-1.png' %}" alt="Treats logo">
                     </a>
                 </div>
@@ -111,7 +111,7 @@
                 <h2 class="color-white">Подробнее о магазине</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Домой</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Домой</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Подробнее о магазине</li>
                     </ol>
                 </nav>
@@ -214,17 +214,9 @@
                             </p>
                         </div>
                         <div class="btn-groups mt-30">
-                            <div class="quantity-input">
-                                <div class="qty-btn quantity-down">
-                                    <i class="fal fa-minus"></i>
-                                </div>
-                                <input type="text" value="1" name="quantity" spellcheck="false" data-ms-editor="true">
-                                <div class="qty-btn quantity-up">
-                                    <i class="fal fa-plus"></i>
-                                </div>
-                            </div>
-                            <a href="cart.html" class="btn btn-md btn-primary" title="Add to Cart" target="_self">добавить в корзину</a>
-                            <a href="checkout.html" class="btn btn-md btn-outline" title="Order Now" target="_self">Заказать сейчас</a>
+                            
+                            <a href="{% url 'shop' %}" class="btn btn-md btn-primary" title="Add to Cart" target="_self">Похожий продукт</a>
+
                         </div>
                         <div class="social-link style-2 mt-30">
                             <a href="https://www.instagram.com/" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a>
@@ -255,10 +247,10 @@
                 <div class="tabs-navigation text-center border-bottom pb-20 mb-30">
                     <ul class="nav nav-tabs" data-hover="fancyHover">
                         <li class="nav-item active">
-                            <button class="nav-link hover-effect active btn-lg radius-sm" data-bs-toggle="tab" data-bs-target="#tab1" type="button">Description</button>
+                            <button class="nav-link hover-effect active btn-lg radius-sm" data-bs-toggle="tab" data-bs-target="#tab1" type="button">Описание</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link hover-effect btn-lg radius-sm" data-bs-toggle="tab" data-bs-target="#tab2" type="button">Reviews</button>
+                            <button class="nav-link hover-effect btn-lg radius-sm" data-bs-toggle="tab" data-bs-target="#tab2" type="button">Отзывы</button>
                         </li>
                     </ul>
                 </div>
@@ -277,7 +269,7 @@
                                 <img class="lazyload blur-up" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/avatar-1.jpg' %}" alt="Person Image">
                             </div>
                             <div class="author-info">
-                                <h6 class="mb-2 lh-1">By Jonathan Doe</h6>
+                                <h6 class="mb-2 lh-1">Джонатан Доу</h6>
                                 <div class="ratings mb-2">
                                     <div class="rate">
                                         <div class="rating-icon"></div>
@@ -292,11 +284,11 @@
                         <div class="shop-review-form mt-30">
                             <form>
                                 <div class="form-group mb-20">
-                                    <label>Comment *</label>
+                                    <label>Комментарий *</label>
                                     <textarea class="form-control" placeholder="Comment" name="comment"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label>Rating *</label>
+                                    <label>Рейтинг *</label>
                                     <ul class="rating list-unstyled mb-20">
                                         <li>
                                             <span class="fas fa-star"></span>
@@ -326,7 +318,7 @@
                                     </ul>
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-lg btn-primary" type="button" aria-label="Submit">Submit</button>
+                                    <button class="btn btn-lg btn-primary" type="button" aria-label="Submit">Представлять на рассмотрение</button>
                                 </div>
                             </form>
                         </div>
@@ -362,25 +354,25 @@
                             <div class="swiper-slide item">
                                 <div class="product radius-md text-center p-30 mb-25">
                                     <figure class="product-img mb-20 mx-auto">
-                                        <a href="shop-details.html" target="_self" title="Link" class="lazy-container ratio ratio-1-1 bg-none">
+                                        <a href="{% url 'shop' %}" target="_self" title="Link" class="lazy-container ratio ratio-1-1 bg-none">
                                             <img class="lazyload" src="{{all_products.image.url}}" data-src="{{all_products.image.url}}" alt="Image">
                                         </a>
                                         <div class="hover-show">
                                             <div class="btn-groups">
-                                                <a href="shop-details.html" class="btn-icon" title="Quick View" target="_self">
+                                                <a href="{% url 'shop' %}" class="btn-icon" title="Quick View" target="_self">
                                                     <i class="fal fa-eye"></i>
                                                 </a>
-                                                <a href="cart.html" class="btn-icon" title="Add to Cart" target="_self">
+                                                <a href="{% url 'shop' %}" class="btn-icon" title="Add to Cart" target="_self">
                                                     <i class="fal fa-shopping-cart"></i>
                                                 </a>
-                                                <a href="wishlist.html" class="btn-icon" title="Add to Wishlist" target="_self">
+                                                <a href="{% url 'shop' %}" class="btn-icon" title="Add to Wishlist" target="_self">
                                                     <i class="fal fa-heart"></i>
                                                 </a>
                                             </div>
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-title lc-1 mb-10"><a href="shop-details.html" target="_self" title="Vanilla Cold Coffee">{{all_products.name}}</a></h4>
+                                        <h4 class="product-title lc-1 mb-10"><a href="{% url 'shop' %}" target="_self" title="Vanilla Cold Coffee">{{all_products.name}}</a></h4>
                                         <div class="product-price">
                                             <span class="h6 font-lg new-price color-primary">${{all_products.prise}}</span>
                                             <span class="prev-price font-sm">${{all_products.old_prise}}</span>

@@ -9,7 +9,7 @@
     <meta name="author" content="KreativDev">
 
     <!-- Title -->
-    <title>Treats - Fast Food & Restaurant HTML Template</title>
+    <title>Наши свежие новости</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{% static 'assets/images/logo/fav.png' %}" type="image/x-icon">
 
@@ -81,9 +81,9 @@
                     <div class="header-top-items mobile-item d-flex flex-wrap justify-content-between gap-15 align-items-center">
                         <a href="tel:99911446666" class="icon-start" target="_self" title="Call Us">
                             <span class="color-primary">
-                                Call Us:
+                                Позвоните нам:
                             </span>
-                            +999 11 44 6666
+                            +0508-03-08-79
                         </a>
                         <div class="social-link icon-only">
                             <a class="rounded-pill" href="https://www.instagram.com/" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a>
@@ -108,11 +108,11 @@
         <div class="overlay 65"></div>
         <div class="container">
             <div class="content text-center">
-                <h2 class="color-white">Blogs</h2>
+                <h2 class="color-white">Новости</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Blogs</li>
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Домой</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Новости</li>
                     </ol>
                 </nav>
             </div>
@@ -128,20 +128,20 @@
                 <div class="col-xl-4 col-md-6" data-aos="fade-up">
                     <article class="card mb-25 radius-md">
                         <div class="card-img">
-                            <a href="blog-details.html" target="_self" title="Link" class="lazy-container ratio ratio-5-3">
+                            <a href="{% url 'blog_detiles' post.id %}" target="_self" title="Link" class="lazy-container ratio ratio-5-3">
                                 <img class="lazyload" src="{{post.image.url}}" data-src="{{post.image.url}}" alt="Blog Image">
                             </a>
                         </div>
                         <div class="card-content radius-md p-25">
                             <ul class="card-list list-unstyled mb-15">
                                 <li class="font-sm icon-start">
-                                    <a href="blogs.html" target="_self" title="Link"><i class="fal fa-user"></i>{{post.profeshion}}</a>
+                                    <a href="{% url 'blog' %}" target="_self" title="Link"><i class="fal fa-user"></i>{{post.profeshion}}</a>
                                 </li>
                                 <li class="font-sm icon-start">
-                                    <a href="blogs.html" target="_self" title="Link"><i class="fal fa-calendar-check"></i>{{ post.data|date:"d.m.Y" }}</a>
+                                    <a href="{% url 'blog' %}" target="_self" title="Link"><i class="fal fa-calendar-check"></i>{{ post.data|date:"d.m.Y" }}</a>
                                 </li>
                                 <li class="font-sm icon-start">
-                                    <a href="blogs.html" target="_self" title="Link"><i class="fal fa-tag"></i>{{post.about}}</a>
+                                    <a href="{% url 'blog' %}" target="_self" title="Link"><i class="fal fa-tag"></i>{{post.about}}</a>
                                 </li>
                             </ul>
                             <h4 class="card-title lc-2 mb-15">
@@ -149,7 +149,7 @@
                                     {{post.descriptions|safe|truncatechars:50}}
                                 </a>
                             </h4>
-                            <a href="#" class="btn-text color-primary" target="_self" title="Read More">Читать далее</a>
+                            <a href="{% url 'blog_detiles' post.id %}" class="btn-text color-primary" target="_self" title="Read More">Читать далее</a>
                         </div>
                     </article>
                 </div>

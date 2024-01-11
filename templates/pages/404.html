@@ -9,7 +9,7 @@
     <meta name="author" content="KreativDev">
 
     <!-- Title -->
-    <title>Treats - Fast Food & Restaurant HTML Template</title>
+    <title>Ошибка</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{% static 'assets/images/logo/fav.png' %}" type="image/x-icon">
 
@@ -53,11 +53,11 @@
         <div class="container">
             <div class="error-content">
                 <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/404.svg' %}" alt="image" >
-                <h3>Ooops! Page Not Found</h3>
+                <h3>Ой! Страница не найдена</h3>
                 <p>
-                    The page you are looking for might have been removed had its name changed or is temporarily unavailable.
+                    Страница, которую вы ищете, могла быть удалена из-за изменения ее названия или временно недоступна.
                 </p>
-                <a href="index.html" class="btn btn-lg btn-primary rounded-pill" title="Back to Home" target="_self">Back to Home</a>
+                <a href="{% url 'home' %}" class="btn btn-lg btn-primary rounded-pill" title="Back to Home" target="_self">Вернуться домой</a>
             </div>
         </div>
     </div>

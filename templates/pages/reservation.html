@@ -108,11 +108,11 @@
         <div class="overlay 65"></div>
         <div class="container">
             <div class="content text-center">
-                <h2 class="color-white">Reservation</h2>
+                <h2 class="color-white">Бронирование</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Reservation</li>
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Домой</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Бронирование</li>
                     </ol>
                 </nav>
             </div>
@@ -128,7 +128,7 @@
                     <div class="wrapper bg-light radius-md">
                         <div class="section-title title-center mb-50">
                             <h2 class="title mb-0" data-aos="fade-up">
-                                Reserve Your Table
+                                Зарезервируйте столик
                             </h2>
                         </div>
                         <form id="reservationForm" method="POST">
@@ -136,14 +136,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group mb-20">
-                                        <label for="fullname">Full Name <span class="color-red">*</span> </label>
+                                        <label for="fullname">Ф.И.О <span class="color-red">*</span> </label>
                                         <input type="text" name="fullname" class="form-control border-0 bg-white" id="fullname" required placeholder="Ф.И.О">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group mb-20">
-                                        <label for="email">Email Address<span class="color-red">*</span> </label>
+                                        <label for="email">Email: <span class="color-red">*</span> </label>
                                         <input type="email" name="email" class="form-control border-0 bg-white" id="email" required placeholder="email.com">
                                     </div>
                                 </div>
@@ -157,21 +157,21 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group mb-20">
-                                        <label for="phone">Select Phone<span class="color-red">*</span> </label>
+                                        <label for="phone">Телефонный номер<span class="color-red">*</span> </label>
                                         <input type="number" name="phone" class="form-control border-0 bg-white" id="phone" required placeholder="Телефонный номер">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group mb-20">
-                                        <label for="date">Select Date<span class="color-red">*</span> </label>
+                                        <label for="date">Выберите дату<span class="color-red">*</span> </label>
                                         <input type="date" name="date" class="form-control border-0 bg-white" id="date" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group mb-20">
-                                        <label for="time">Select Time<span class="color-red">*</span> </label>
+                                        <label for="time">Выберите время<span class="color-red">*</span> </label>
                                         <select class="niceselect form-control border-0 bg-white" name="time" id="time">
                                             <option value="1">08.00 AM to 09.00 AM</option>
                                             <option value="2">10.00 AM to 11.00 AM</option>
@@ -184,12 +184,12 @@
 
                                 <div class="col-12">
                                     <div class="form-group mb-20">
-                                        <textarea name="message" id="message" class="form-control border-0 bg-white" cols="30" rows="8" placeholder="Write message..."></textarea>
+                                        <textarea name="message" id="message" class="form-control border-0 bg-white" cols="30" rows="8" placeholder="Написать сообщение..."></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12 text-center">
-                                    <button class="btn btn-lg btn-primary rounded-pill"  aria-label="Make a Reservation">Make a Reservation</button>
+                                    <button class="btn btn-lg btn-primary rounded-pill"  aria-label="Make a Reservation">Зарезервировать</button>
                                 </div>
                             </div>
                         </form>

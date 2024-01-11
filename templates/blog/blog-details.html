@@ -9,7 +9,7 @@
     <meta name="author" content="KreativDev">
 
     <!-- Title -->
-    <title>Treats - Fast Food & Restaurant HTML Template</title>
+    <title>Подробности о новостях</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{% static 'assets/images/logo/fav.png' %}" type="image/x-icon">
 
@@ -62,7 +62,7 @@
             <div class="container">
                 <!-- Mobile Logo -->
                 <div class="logo">
-                    <a href="index.html" target="_self" title="Treats">
+                    <a href="{% url 'home' %}" target="_self" title="Treats">
                         <img class="lazyload" src="{% static 'assets/images/placeholder.png' %}" data-src="{% static 'assets/images/logo/logo-1.png' %}" alt="Treats logo">
                     </a>
                 </div>
@@ -81,9 +81,9 @@
                     <div class="header-top-items mobile-item d-flex flex-wrap justify-content-between gap-15 align-items-center">
                         <a href="tel:99911446666" class="icon-start" target="_self" title="Call Us">
                             <span class="color-primary">
-                                Call Us:
+                                Позвоните нам
                             </span>
-                            +999 11 44 6666
+                            +0508-03-08-79
                         </a>
                         <div class="social-link icon-only">
                             <a class="rounded-pill" href="https://www.instagram.com/" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a>
@@ -108,11 +108,11 @@
         <div class="overlay 65"></div>
         <div class="container">
             <div class="content text-center">
-                <h2 class="color-white">Blog Details</h2>
+                <h2 class="color-white">Новость</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Домой</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Новость</li>
                     </ol>
                 </nav>
             </div>
@@ -200,7 +200,7 @@
                                             <p>
                                                 {{comment.comments}}
                                             </p>
-                                            <a href="blog-details.html" class="font-sm color-primary" target="_self" title="Reply">Reply</a>
+                                            <a href="{% url 'blog_detiles' news.id %}" class="font-sm color-primary" target="_self" title="Reply">Reply</a>
                                         </div>
                                     </div>
                                 </li>
@@ -208,10 +208,15 @@
                             </ol>
                         </div>
                         <div class="comment-reply mb-50">
-                            <h3 class="mb-10">Post Your Comment</h3>
+                            <h3 class="mb-10">Опубликовать свой комментарий</h3>
                             <p class="comment-notes">
-                                <span id="email-notes">Your email address will not be published.</span>
-                                Required fields are marked
+                                <span id="email-notes">Ваш электронный адрес не будет опубликован.</span>
+                                
+​
+26 / 5 000
+Результаты перевода
+Перевод
+Обязательные поля помечены
                                 <span class="required text-danger">*</span>
                             </p>
                             <form id="commentForm" class="comment-form" method="POST">
@@ -233,7 +238,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-lg btn-primary rounded-pill"  aria-label="Post Comment">Post Comment</button>
+                                <button class="btn btn-lg btn-primary rounded-pill"  aria-label="Post Comment">Оставить комментарий</button>
                             </form>
                         </div>
                     </div>
@@ -244,11 +249,11 @@
                         <!-- Widget search -->
                         <div class="widget widget-search mb-40">
                             <div class="p-25 radius-md border">
-                                <h4 class="title mb-10">Search Posts</h4>
+                                <h4 class="title mb-10">Поиск сообщений</h4>
                                 <div class="search-form">
                                     <form id="searchForm">
                                         <div class="input-inline rounded-pill border">
-                                            <input class="form-control border-0 rounded-pill" placeholder="Search here..." type="text" name="SEARCH" required="">
+                                            <input class="form-control border-0 rounded-pill" placeholder="Поищи здесь..." type="text" name="SEARCH" required="">
                                             <button class="btn-icon rounded-circle" type="submit" aria-label="Search button">
                                                 <i class="far fa-search"></i>
                                             </button>
@@ -263,7 +268,7 @@
                             <div class="p-25 radius-md border">
                                 <h4 class="title">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#blogPost">
-                                        Top Latest Post
+                                        Топ последних сообщений
                                     </button>
                                 </h4>
                                 <div id="blogPost" class="collapse show">
@@ -271,24 +276,24 @@
                                         {% for news in blog_post|slice:":3" %}
                                         <article class="blog blog-inline">
                                             <div class="blog-img">
-                                                <a href="blog-details.html" target="_self" title="Link" class="lazy-container ratio ratio-1-1 radius-sm">
+                                                <a href="{% url 'blog_detiles' news.id %}" target="_self" title="Link" class="lazy-container ratio ratio-1-1 radius-sm">
                                                     <img class="lazyload" src="{{news.image.url}}" data-src="{{news.image.url}}" alt="Blog Image">
                                                 </a>
                                             </div>
                                             <div class="blog-content">
                                                 <h6 class="blog-title lc-2 mb-10">
-                                                    <a href="blog-details.html" target="_self" title="Link">
+                                                    <a href="{% url 'blog_detiles' news.id %}" target="_self" title="Link">
                                                         {{news.descriptions|safe}}
                                                     </a>
                                                 </h6>
                                                 <ul class="blog-list no-border list-unstyled">
                                                     <li class="icon-start font-sm">
-                                                        <a href="blogs.html" target="_self" title="link">
+                                                        <a href="{% url 'blog' %}" target="_self" title="link">
                                                             <i class="fal fa-user-circle"></i>{{news.profeshion}}
                                                         </a>
                                                     </li>
                                                     <li class="icon-start font-sm">
-                                                        <a href="blogs.html" target="_self" title="link">
+                                                        <a href="{% url 'blog' %}" target="_self" title="link">
                                                             <i class="fal fa-calendar-alt"></i>{{ blog_post.data|date:"d.m.Y" }}
                                                         </a>
                                                     </li>
@@ -306,39 +311,39 @@
                             <div class="p-25 radius-md border">
                                 <h4 class="title">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#blogCategory">
-                                        Categories
+                                        Категории
                                     </button>
                                 </h4>
                                 <div id="blogCategory" class="collapse show">
                                     <div class="accordion-body mt-20 scroll-y">
                                         <ul class="list-unstyled m-0">
                                             <li>
-                                                <a href="blogs.html" target="_self" title="Blogs" class="border p-20 radius-sm">
-                                                    <span>Food</span>
+                                                <a href="{% url 'blog' %}" target="_self" title="Blogs" class="border p-20 radius-sm">
+                                                    <span>Еда</span>
                                                     <span class="qty">258</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="blogs.html" target="_self" title="Blogs" class="border p-20 radius-sm">
-                                                    <span>Drinks</span>
+                                                <a href="{% url 'blog' %}" target="_self" title="Blogs" class="border p-20 radius-sm">
+                                                    <span>Напитки</span>
                                                     <span class="qty">562</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="blogs.html" target="_self" title="Blogs" class="border p-20 radius-sm">
-                                                    <span>Pizza</span>
+                                                <a href="{% url 'blog' %}" target="_self" title="Blogs" class="border p-20 radius-sm">
+                                                    <span>Пицца</span>
                                                     <span class="qty">125</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="blogs.html" target="_self" title="Blogs" class="border p-20 radius-sm">
-                                                    <span>Beverage</span>
+                                                <a href="{% url 'blog' %}" target="_self" title="Blogs" class="border p-20 radius-sm">
+                                                    <span>Напиток</span>
                                                     <span class="qty">68</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="blogs.html" target="_self" title="Blogs" class="border p-20 radius-sm">
-                                                    <span>Health</span>
+                                                <a href="{% url 'blog' %}" target="_self" title="Blogs" class="border p-20 radius-sm">
+                                                    <span>Здоровье</span>
                                                     <span class="qty">322</span>
                                                 </a>
                                             </li>
@@ -352,10 +357,10 @@
                         <div class="widget widget-newsletter mb-40">
                             <div class="p-25 radius-md border">
                                 <h4 class="title mb-10">
-                                    Subscribe Newsletter
+                                    Подписаться на рассылку
                                 </h4>
                                 <p class="text">
-                                    Subscribe to our newsletter to get update and weakly discount from Treats.
+                                    Подпишитесь на нашу рассылку, чтобы получать обновления и небольшие скидки от Treats.
                                 </p>
                                 <div class="newsletter-form mt-20 mb-1">
                                     <form id="subscriptionForm">
@@ -375,20 +380,20 @@
                             <div class="p-25 radius-md border">
                                 <h4 class="title">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#blogTags">
-                                        Relates Tags
+                                        Связанные теги
                                     </button>
                                 </h4>
                                 <div id="blogTags" class="collapse show">
                                     <div class="accordion-body mt-20 scroll-y">
                                         <div class="tags-group d-flex flex-wrap gap-2">
-                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Food</a>
-                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Health</a>
-                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Pizza</a>
-                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Drinks</a>
-                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Juice</a>
-                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Coffee</a>
-                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Milk</a>
-                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Chicken</a>
+                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Еда</a>
+                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Напитки</a>
+                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Пицца</a>
+                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Напитки</a>
+                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Сок</a>
+                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Кофе</a>
+                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Молоко</a>
+                                            <a href="{% url 'blog' %}" class="px-3 py-2 border radius-sm font-sm" title="Link" target="_self">Курица</a>
                                         </div>
                                     </div>
                                 </div>
